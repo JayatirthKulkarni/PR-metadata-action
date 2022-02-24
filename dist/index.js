@@ -8581,6 +8581,15 @@ const main = async () => {
         - ${diffData.deletions} deletions \n
       `
     });
+    
+    /**
+     * Create an issue when pr is created     
+     */
+    await octokit.rest.issues.create({
+      owner,
+      repo,
+      title: "This issue is created for PR No:", pr_number,
+    });
 
   } catch (error) {
     core.setFailed(error.message);
