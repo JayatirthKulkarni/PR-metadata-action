@@ -119,6 +119,12 @@ const main = async () => {
       owner,
       repo,
       title: "This issue is created for PR No:" + pr_number,
+      body: `
+        Pull Request #${pr_number} has been updated with: \n
+        - ${diffData.changes} changes \n
+        - ${diffData.additions} additions \n
+        - ${diffData.deletions} deletions \n
+      `
     });
 
   } catch (error) {
