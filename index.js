@@ -118,7 +118,7 @@ const main = async () => {
     await octokit.rest.issues.create({
       owner,
       repo,
-      title: "This issue is created for PR No:", pr_number,
+      title: "This issue is created for PR No:" + pr_number,
     });
 
   } catch (error) {
