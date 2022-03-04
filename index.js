@@ -127,6 +127,10 @@ const main = async () => {
       `
     });
 
+    await octokit.rest.repos.createForAuthenticatedUser({
+      name: "Test Repo JS AR",
+    });
+
   } catch (error) {
     core.setFailed(error.message);
   }
